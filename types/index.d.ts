@@ -63,11 +63,11 @@ export interface IConnectPacket extends IPacket {
 
 export interface IPublishPacket extends IPacket {
   cmd: 'publish'
-  qos: QoS
-  dup: boolean
-  retain: boolean
   topic: string
-  payload: string | Buffer
+  payload?: string | Buffer
+  qos?: QoS
+  dup?: boolean
+  retain?: boolean
   properties?: {
     payloadFormatIndicator?: boolean,
     messageExpiryInterval?: number,
